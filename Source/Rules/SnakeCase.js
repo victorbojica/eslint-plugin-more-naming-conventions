@@ -5,7 +5,7 @@ module.exports = function(context)
   return {
     Identifier: function(node)
     {
-      if (node.parent.type !== `VariableDeclarator`)
+      if (node.parent.type !== `VariableDeclarator` && node.parent.type !== `FunctionDeclaration` && node.parent.type !== `MethodDefinition`)
         return;
 
       const source_code = context.getSourceCode();
