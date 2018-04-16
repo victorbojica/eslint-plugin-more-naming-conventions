@@ -84,9 +84,7 @@ module.exports = function(context)
     Identifier: function(node)
     {
       const ALLOWED_PARENTS = [
-        `FunctionDeclaration`,
         `ClassDeclaration`,
-        `MethodDefinition`
       ];
       if (ALLOWED_PARENTS.indexOf(node.parent.type) === -1)
         return;
