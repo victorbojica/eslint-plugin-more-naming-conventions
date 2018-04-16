@@ -86,7 +86,7 @@ module.exports = function(context)
       const ALLOWED_PARENTS = [
         `ClassDeclaration`,
       ];
-      if (ALLOWED_PARENTS.indexOf(node.parent.type) === -1)
+      if (node.parent.type !== `ClassDeclaration`)
         return;
       // The Espree parser will count function parameters as FunctionDeclarations here, which isn't
       // particularly desirable. The parent of a function name refers to itself, and the parent of a
